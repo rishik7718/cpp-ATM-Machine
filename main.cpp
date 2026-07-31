@@ -2,7 +2,7 @@
 using namespace std;
 void menu()
 {
-	cout<<"********MENU********"<<endl;
+	cout<<"*********MENU*********"<<endl;
 	cout<<"1 . Check Balance"<<endl;
 	cout<<"2 . Deposit Money"<<endl;
 	cout<<"3 . Withdraw Money"<<endl;
