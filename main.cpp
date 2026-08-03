@@ -2,12 +2,20 @@
 using namespace std;
 void showMenu()
 {
+<<<<<<< HEAD
 	cout<<"********MENU********"<<endl;
 	cout<<"1 . CHEAK BALANCE"<<endl;
 	cout<<"2 . DEPOSIT MONEY"<<endl;
 	cout<<"3 . WITHDRAW MONEY"<<endl;
 	cout<<"4 . VEIW TRANSACTION HISTORY "<<endl;
 	cout<<"5 . EXIT MENU"<<endl;
+=======
+	cout<<"*********MENU*********"<<endl;
+	cout<<"1 . Check Balance"<<endl;
+	cout<<"2 . Deposit Money"<<endl;
+	cout<<"3 . Withdraw Money"<<endl;
+	cout<<"4 . EXIT "<<endl;
+>>>>>>> 87c56005220b7847efa25b0cf2799c647463fb19
 	cout<<"*********************"<<endl;
 }
 
@@ -101,8 +109,14 @@ int main()
 				
 						
 	}
+<<<<<<< HEAD
 }
 
 while (Option!=5);
 return 0;
 }
+=======
+	while(Option!=4);
+	return 0;
+}
+>>>>>>> 87c56005220b7847efa25b0cf2799c647463fb19
