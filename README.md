@@ -14,12 +14,14 @@ This project was built to practice functions, loops, switch statements, and cond
 
 ## ✨ Features
 
-- 💰 Check account balance
-- ➕ Deposit money
-- ➖ Withdraw money
-- 📋 Menu-driven interface
-- 🔄 Repeats until the user chooses to exit
-
+- Check account balance
+- Deposit money
+- Withdraw money
+- Prevent invalid deposit and withdrawal amounts
+- Prevent withdrawals exceeding available balance
+- Display latest transaction details
+- Display ATM summary before exit
+- Track total number of deposits and withdrawals
 ---
 
 ## 🛠️ Technologies Used
@@ -64,13 +66,11 @@ g++ main.cpp -o atm
 
 ## 🔮 Future Improvements
 
-- PIN Verification
-- Multiple User Accounts
-- Transaction History
-- Change PIN
-- File Handling
-- Interest Calculation
-
+- Store complete transaction history using arrays
+- Add PIN authentication
+- Transfer money between accounts
+- Save account data using file handling
+- Support multiple users
 ---
 
 ## 👨‍💻 Author
