@@ -1,59 +1,108 @@
 #include<iostream>
 using namespace std;
-void menu()
+void showMenu()
 {
 	cout<<"********MENU********"<<endl;
-	cout<<"1 . Check Balance"<<endl;
-	cout<<"2 . Deposit Money"<<endl;
-	cout<<"3 . Withdraw Money"<<endl;
-	cout<<"4 . EXIT "<<endl;
+	cout<<"1 . CHEAK BALANCE"<<endl;
+	cout<<"2 . DEPOSIT MONEY"<<endl;
+	cout<<"3 . WITHDRAW MONEY"<<endl;
+	cout<<"4 . VEIW TRANSACTION HISTORY "<<endl;
+	cout<<"5 . EXIT MENU"<<endl;
 	cout<<"*********************"<<endl;
 }
+
 
 int main()
 {
 	int Option;
-	double Balance=500;
+	double transaction=0;
+	double initialBALANCE=500;
+	double BALANCE = initialBALANCE;
+    double Deposit = 0;
+    double Withdraw = 0;
+    int depocount=0;
+    int withcount=0;
 	do {
-	menu();
-	cout<<"Enter Your Option : ";
+		showMenu();
+	cout<<"Enter The Option : ";
 	cin>>Option;
 	system("cls");
-	switch (Option)
-	{
-	case 1 :
-		cout<<"Your Current Balance Is : "<<Balance<<endl;
-		break;
-	case 2 :
-	    cout<<"Enter The Amount You Want To Deposit : ";
-		double Deposit;
-		cin>>Deposit;
-		Balance+=Deposit;
-		cout<<"Deposit Succesfull !!"<<endl;
-		cout<<"Your Current Balance Is :"<<Balance<<endl;
-		break;
-	case 3 :
-	    cout<<"Enter The Amount You Want To Withdraw : "<<endl;
-		double Withdraw;
-		cin>>Withdraw;
-		if(Balance>=Withdraw)
-		{Balance-=Withdraw;
-		cout<<"Withdraw Succesfull !!"<<endl;
-		cout<<"Your Current Balance Is :"<<Balance<<endl;}
-		else 
-		{
-			cout<<"No Enough Money !!"<<endl;
-		}
-		break;	
-	case 4 :
-		cout<<"Thank You For Using Our ATM Machine !!"<<endl;
-		break ;
-	default :
-		cout<<"Invalid Option Entered"<<endl;
-		cout<<"Try Again"<<endl;
-		break;
-	  }
+	
+	
+	switch(Option){
+		case 1 :
+			cout<<"Your Current Balance Is : "<<BALANCE<<" rupees"<<endl;
+			break;
+		case 2 :
+		    cout<<"Enter The Amount You Want To Deposit : ";
+		
+			cin>>Deposit;
+			if(Deposit>0)
+		{   BALANCE+=Deposit;
+			transaction++;
+			cout<<"Deposit Succesfull !!"<<endl;
+			cout<<"Your Current Balance Is : "<<BALANCE<<endl;
+			depocount++;}
+			
+			else
+			{
+				cout<<"Invalid Amount !"<<endl;
+			}
+			break;
+		case 3 :
+		    cout<<"Enter The Amount Of Money You Want To Withdraw : ";
+		     
+			cin>>Withdraw;
+			if(Withdraw>0)
+			{ 
+			if(BALANCE>=Withdraw)
+			{
+		     BALANCE-=Withdraw;
+		     transaction++;
+			 cout<<"Withdraw Succesfull !!"<<endl;
+			 cout<<"Your Current Balance :"<<BALANCE<<endl;
+			 withcount++;} 
+		    else
+			{
+				cout<<"Your Current Balance : "<<BALANCE<<endl;
+				cout<<"Your Withdraw Amount : "<<Withdraw<<endl;
+				cout<<" Insufficient Balance !!"<<endl;
+			 } }
+			else
+			{
+				cout<<"Invalid Amount !"<<endl;
+			}
+			  
+			break;
+		case 4 :
+			cout<<"        Transaction History :        "<<endl;
+			if(transaction>0)
+			  {
+			  	cout<<"+"<< Deposit<<" Deposited "<<endl;
+			  	cout<<"-"<< Withdraw<<" Withdrwed "<<endl;
+			  }
+			else
+			  {
+			  	cout<<"No Transactions Yet "<<endl;
+		      }
+		    break;
+		case 5 :
+			cout<<"############## ATM Summary ##############"<<endl;
+			cout<<"Initial Balance : "<< initialBALANCE<<endl;
+			cout<<"Your Current Balance : "<<BALANCE<<endl;
+			cout<<"Deposits : "<<depocount<<endl;
+			cout<<"Withdrawals : "<<withcount<<endl;
+		    cout<<"THANK YOU For Using Our ATM"<<endl;
+			break;	
+		default :
+				cout<<"Invalid Option"<<endl;
+				cout<<"Try Again"<<endl;
+				break;
+				
+						
 	}
-	while(Option!=4);
-	return 0;
+}
+
+while (Option!=5);
+return 0;
 }
